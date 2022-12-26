@@ -40,6 +40,12 @@ addBookToLibrary.prototype.createCard = function(arr){
     }
 }
 
+addBookToLibrary.prototype.clearInput = function(){
+    bookName.value = '';
+    authorName.value = '';
+    bookPages.value = '';
+}
+
 addButton.addEventListener('click', (e)=>{
     card.innerHTML = '';
     e.preventDefault();
@@ -47,6 +53,7 @@ addButton.addEventListener('click', (e)=>{
     addBookToLibrary();
 
     addBookToLibrary.prototype.createCard(myLibrary);
+    addBookToLibrary.prototype.clearInput();
     bookForm.classList.remove('display-form');
     
 });
