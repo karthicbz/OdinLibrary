@@ -7,6 +7,7 @@ const newBook = document.querySelector('.newBook');
 const bookForm = document.querySelector('.book-form');
 
 const cardContainer = document.querySelector('.card-container');
+const card = document.querySelector('.card');
 
 let myLibrary = [];
 
@@ -34,17 +35,19 @@ addBookToLibrary.prototype.createCard = function(arr){
         delButton.classList.add('delButton');
         delButton.textContent='delete';
         div.appendChild(delButton);
-        cardContainer.appendChild(div);
+
+        card.appendChild(div);
     }
 }
 
 addButton.addEventListener('click', (e)=>{
-    cardContainer.innerHTML = '';
+    card.innerHTML = '';
     e.preventDefault();
     Book(bookName.value, authorName.value, bookPages.value, readStatus.value);
     addBookToLibrary();
 
     addBookToLibrary.prototype.createCard(myLibrary);
+    bookForm.classList.remove('display-form');
     
 });
 
