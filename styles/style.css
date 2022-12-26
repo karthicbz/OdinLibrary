@@ -13,6 +13,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10% 1fr;
+
+    position: relative;
 }
 
 .header{
@@ -41,7 +43,7 @@
     font-weight: 700;
     border-radius: 3px;
     margin-right: 1rem;
-    box-shadow: 1px 1px 3px 1px #102b95;
+    /* box-shadow: 1px 1px 3px 1px #102b95; */
 }
 
 .header>.newBook:active{
@@ -60,12 +62,18 @@ form{
     width: 350px;
     gap: 8px;
     box-shadow: 2px 2px 5px 1px gray;
-    margin: 20px auto 0;
+    /* margin: 20px auto 0; */
     border-radius: 5px;
 }
 
 .display-form{
     display: flex;
+
+    position: absolute;
+    top: 12%;
+    left: calc((100vw - 350px)/2);
+    height: max-content;
+    z-index: 10;
 }
 
 form>button, form>input, form>select{
