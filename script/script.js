@@ -3,6 +3,8 @@ const authorName = document.querySelector('#authorName');
 const bookPages = document.querySelector('#pages');
 const readStatus = document.querySelector('#read');
 const addButton = document.querySelector('.addBook');
+const newBook = document.querySelector('.newBook');
+const bookForm = document.querySelector('.book-form');
 
 const cardContainer = document.querySelector('.card-container');
 
@@ -44,6 +46,11 @@ addButton.addEventListener('click', (e)=>{
 
     addBookToLibrary.prototype.createCard(myLibrary);
     
+});
+
+newBook.addEventListener('click', ()=>{
+    // bookForm.setAttribute('style', 'display: flex;');
+    bookForm.classList.toggle('display-form');
 });
 
 

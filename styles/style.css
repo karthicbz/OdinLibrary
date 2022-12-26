@@ -64,6 +64,10 @@ form{
     border-radius: 5px;
 }
 
+.display-form{
+    display: flex;
+}
+
 form>button, form>input, form>select{
     font-size: 1rem;
     padding: 5px;
