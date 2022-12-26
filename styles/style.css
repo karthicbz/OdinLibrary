@@ -20,8 +20,15 @@
     grid-row: 1/2;
     background-color: lightskyblue;
     display: grid;
-    align-items: center;
-    justify-items: end;
+    grid-template-columns: 1fr 10%;
+    align-content: center;
+}
+
+.header>.header-text{
+    color: white;
+    font-size: 2rem;
+    margin-left: 1rem;
+    font-weight: 700;
 }
 
 .header>.newBook{
