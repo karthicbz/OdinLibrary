@@ -4,7 +4,7 @@ const bookPages = document.querySelector('#pages');
 const readStatus = document.querySelector('#read');
 const addButton = document.querySelector('.addBook');
 
-const card = document.querySelector('.card');
+const cardContainer = document.querySelector('.card-container');
 
 let myLibrary = [];
 
@@ -32,12 +32,12 @@ addBookToLibrary.prototype.createCard = function(arr){
         delButton.classList.add('delButton');
         delButton.textContent='delete';
         div.appendChild(delButton);
-        card.appendChild(div);
+        cardContainer.appendChild(div);
     }
 }
 
 addButton.addEventListener('click', (e)=>{
-    card.innerHTML = '';
+    cardContainer.innerHTML = '';
     e.preventDefault();
     Book(bookName.value, authorName.value, bookPages.value, readStatus.value);
     addBookToLibrary();

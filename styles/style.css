@@ -21,6 +21,11 @@
     background-color: lightskyblue;
 }
 
+.card-container{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
 form{
     padding: 1.5rem;
     display: none;
