@@ -20,6 +20,7 @@ html, body{
 
     position: relative;
     height: 100%;
+    background: rgb(244, 242, 242);
 }
 
 .header{
@@ -49,6 +50,11 @@ html, body{
     border-radius: 3px;
     margin-right: 1rem;
     /* box-shadow: 1px 1px 3px 1px #102b95; */
+    transition: transform 0.5s;
+}
+
+.header>.newBook:hover{
+    transform: scale(1.1, 1.1);
 }
 
 .header>.newBook:active{
@@ -65,6 +71,7 @@ html, body{
     grid-template-columns: repeat(auto-fit, max(200px));
     grid-template-rows: 250px;
     gap: 20px;
+    /* background-color: white; */
 }
 
 .card>div{
@@ -73,6 +80,7 @@ html, body{
     box-shadow: 1px 1px 5px 1px grey;
     margin: 1rem;
     border-radius: 5px;
+    background-color: white;
 }
 
 .card>div>.del-button{
@@ -106,7 +114,7 @@ form{
     box-shadow: 2px 2px 5px 1px gray;
     /* margin: 20px auto 0; */
     border-radius: 5px;
-    background-color: gray;
+    background-color: white;
 }
 
 .display-form{
@@ -132,4 +140,10 @@ form>button{
     color: white;
     font-weight: 700;
     border-radius: 3px;
+
+    transition: transform 0.5s;
+}
+
+form>button:hover{
+    transform: scale(1.05, 1.05);
 }
