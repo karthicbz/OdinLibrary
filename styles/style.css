@@ -74,11 +74,20 @@ html, body{
     margin: 1rem;
 }
 
-.card>div>.delButton{
+.card>div>.del-button{
     padding: 0.3rem;
     margin-top: 8px;
     border: none;
     background: #f04c4c;
+    color: white;
+    border-radius: 3px;
+}
+
+.card>div>.edit-button{
+    padding: 0.3rem;
+    margin-top: 8px;
+    border: none;
+    background: green;
     color: white;
     border-radius: 3px;
 }

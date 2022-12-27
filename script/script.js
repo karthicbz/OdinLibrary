@@ -31,11 +31,16 @@ addBookToLibrary.prototype.createCard = function(arr){
             p.textContent = `${key}: ${arr[i][key]}`;
             div.appendChild(p);
         }
-        const delButton = document.createElement('button');
-        delButton.classList.add('delButton');
-        delButton.textContent='delete';
-        div.appendChild(delButton);
 
+        const editButton = document.createElement('button');
+        editButton.classList.add('edit-button');
+        editButton.textContent = 'Edit';
+        div.appendChild(editButton);
+
+        const delButton = document.createElement('button');
+        delButton.classList.add('del-button');
+        delButton.textContent='Delete';
+        div.appendChild(delButton);
 
         card.appendChild(div);
     }
