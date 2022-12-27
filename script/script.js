@@ -35,6 +35,7 @@ addBookToLibrary.prototype.createCard = function(arr){
         }
 
         const editButton = document.createElement('button');
+        editButton.setAttribute('data-index-number', i);
         editButton.classList.add('edit-button');
         editButton.textContent = 'Edit';
         div.appendChild(editButton);
@@ -64,16 +65,7 @@ addButton.addEventListener('click', (e)=>{
     addBookToLibrary.prototype.createCard(myLibrary);
     addBookToLibrary.prototype.clearInput();
     bookForm.classList.remove('display-form');
-    // hasCards();
-    // let deleteButton = document.querySelectorAll('.del-button');
-    // deleteButton.forEach(button=>button.addEventListener('click', ()=>{
-    //     myLibrary.splice(button.dataset.indexNumber, 1);
-    //     card.innerHTML = '';
-    //     addBookToLibrary.prototype.createCard(myLibrary);
-    //     deleteButton = document.querySelectorAll('.del-button');
-    //     console.log(deleteButton);
-    // }));
-    // console.log(del);
+    newBook.textContent = 'New Book';
 });
 
 newBook.addEventListener('click', (e)=>{
@@ -92,6 +84,17 @@ card.addEventListener('click', (e)=>{
         myLibrary.splice(e.target.dataset.indexNumber, 1);
         card.innerHTML = '';
         addBookToLibrary.prototype.createCard(myLibrary);
+    }else if(e.target.textContent === 'Edit'){
+        // console.log(myLibrary[e.target.dataset.indexNumber]['read']);
+        if(myLibrary[e.target.dataset.indexNumber]['read'] === 'Yes'){
+            myLibrary[e.target.dataset.indexNumber]['read'] = 'No';
+            card.innerHTML = '';
+            addBookToLibrary.prototype.createCard(myLibrary);
+        }else{
+            myLibrary[e.target.dataset.indexNumber]['read'] = 'Yes';
+            card.innerHTML = '';
+            addBookToLibrary.prototype.createCard(myLibrary);
+        }
     }
 });
 
