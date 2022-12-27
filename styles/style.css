@@ -147,3 +147,15 @@ form>button{
 form>button:hover{
     transform: scale(1.05, 1.05);
 }
+
+/* .err-msg{
+    display: none;
+}
+
+.error{
+    display: block;
+    background-color: red;
+    padding: 5px;   
+    border-radius: 3px;    
+    color: white;
+} */

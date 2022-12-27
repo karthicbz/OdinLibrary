@@ -8,6 +8,8 @@ const bookForm = document.querySelector('.book-form');
 
 const cardContainer = document.querySelector('.card-container');
 const card = document.querySelector('.card');
+
+const errorMsg = document.querySelector('.err-msg');
 // let del;
 
 
@@ -57,6 +59,9 @@ addBookToLibrary.prototype.clearInput = function(){
 }
 
 addButton.addEventListener('click', (e)=>{
+    if(bookName.value === '' || authorName.value === '' || bookPages.value === ''){
+        // errorMsg.classList.add('error');
+    }else{
     card.innerHTML = '';
     e.preventDefault();
     Book(bookName.value, authorName.value, bookPages.value, readStatus.value);
@@ -66,6 +71,7 @@ addButton.addEventListener('click', (e)=>{
     addBookToLibrary.prototype.clearInput();
     bookForm.classList.remove('display-form');
     newBook.textContent = 'New Book';
+    }
 });
 
 newBook.addEventListener('click', (e)=>{

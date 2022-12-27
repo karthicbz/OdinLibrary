@@ -16,11 +16,14 @@
         </div>
         <form action="#" method="post" class="book-form">
             <p class="bookName">Book Name:</p>
-            <input type="text" name="bookName" id="bookName">
+            <input type="text" name="bookName" id="bookName" required>
+            <!-- <p class="err-msg">Book name should not be empty</p> -->
             <p class="authorName">Author:</p>
-            <input type="text" name="authorName" id="authorName">
+            <input type="text" name="authorName" id="authorName" required>
+            <!-- <p class="err-msg">Author name should not be empty</p> -->
             <p class="Pages">Pages:</p>
-            <input type="tel" name="pages" id="pages">
+            <input type="tel" name="pages" id="pages" required>
+            <!-- <p class="err-msg">Pages should not be empty</p> -->
             <label for="read">Read?</label>
             <select name="read" id="read">
                 <option value="Yes">Yes</option>
