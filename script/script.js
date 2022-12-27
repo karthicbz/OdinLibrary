@@ -64,9 +64,14 @@ addButton.addEventListener('click', (e)=>{
     
 });
 
-newBook.addEventListener('click', ()=>{
+newBook.addEventListener('click', (e)=>{
     // bookForm.setAttribute('style', 'display: flex;');
     bookForm.classList.toggle('display-form');
+    if(e.target.innerText === 'New Book'){
+        e.target.innerText = 'Cancel';
+    }else{
+        e.target.innerText = 'New Book';
+    }
 });
 
 

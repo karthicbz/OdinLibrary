@@ -39,7 +39,7 @@ html, body{
 }
 
 .header>.newBook{
-    width: max-content;
+    width: 100px;
     height: max-content;
     padding: 10px;
     border: none;
@@ -72,6 +72,7 @@ html, body{
     line-height: 1.5rem;
     box-shadow: 1px 1px 5px 1px grey;
     margin: 1rem;
+    border-radius: 5px;
 }
 
 .card>div>.del-button{
@@ -85,11 +86,15 @@ html, body{
 
 .card>div>.edit-button{
     padding: 0.3rem;
-    margin-top: 8px;
+    margin-top: 1rem;
     border: none;
-    background: green;
+    background: #42b062;
     color: white;
     border-radius: 3px;
+}
+
+.card>div>button:active{
+    transform: scale(0.9, 0.9);
 }
 
 form{
