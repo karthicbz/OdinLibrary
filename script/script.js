@@ -8,6 +8,8 @@ const bookForm = document.querySelector('.book-form');
 
 const cardContainer = document.querySelector('.card-container');
 const card = document.querySelector('.card');
+// let del;
+
 
 let myLibrary = [];
 
@@ -38,6 +40,7 @@ addBookToLibrary.prototype.createCard = function(arr){
         div.appendChild(editButton);
 
         const delButton = document.createElement('button');
+        delButton.setAttribute('data-index-number', i);
         delButton.classList.add('del-button');
         delButton.textContent='Delete';
         div.appendChild(delButton);
@@ -61,7 +64,16 @@ addButton.addEventListener('click', (e)=>{
     addBookToLibrary.prototype.createCard(myLibrary);
     addBookToLibrary.prototype.clearInput();
     bookForm.classList.remove('display-form');
-    
+    // hasCards();
+    // let deleteButton = document.querySelectorAll('.del-button');
+    // deleteButton.forEach(button=>button.addEventListener('click', ()=>{
+    //     myLibrary.splice(button.dataset.indexNumber, 1);
+    //     card.innerHTML = '';
+    //     addBookToLibrary.prototype.createCard(myLibrary);
+    //     deleteButton = document.querySelectorAll('.del-button');
+    //     console.log(deleteButton);
+    // }));
+    // console.log(del);
 });
 
 newBook.addEventListener('click', (e)=>{
@@ -74,6 +86,12 @@ newBook.addEventListener('click', (e)=>{
     }
 });
 
-
-
+card.addEventListener('click', (e)=>{
+    // console.log(e.target.textContent);
+    if(e.target.textContent === 'Delete'){
+        myLibrary.splice(e.target.dataset.indexNumber, 1);
+        card.innerHTML = '';
+        addBookToLibrary.prototype.createCard(myLibrary);
+    }
+});
 
