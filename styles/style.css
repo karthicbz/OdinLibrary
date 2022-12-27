@@ -81,6 +81,7 @@ html, body{
     margin: 1rem;
     border-radius: 5px;
     background-color: white;
+    text-align: center;
 }
 
 .card>div>.del-button{
@@ -90,6 +91,15 @@ html, body{
     background: #f04c4c;
     color: white;
     border-radius: 3px;
+    transition: transform 0.5s;
+}
+
+.card>div>.del-button:hover{
+    transform: scale(1.05,1.05);
+}
+
+.card>div>.del-button:active{
+    transform: scale(0.9,0.9);
 }
 
 .card>div>.edit-button{
@@ -99,6 +109,15 @@ html, body{
     background: #42b062;
     color: white;
     border-radius: 3px;
+    transition: transform 0.5s;
+}
+
+.card>div>.edit-button:hover{
+    transform: scale(1.05, 1.05);
+}
+
+.card>div>.edit-button:active{
+    transform: scale(0.9,0.9);
 }
 
 .card>div>button:active{
