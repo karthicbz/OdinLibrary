@@ -28,7 +28,7 @@ addBookToLibrary.prototype.createCard = function(arr){
         const div = document.createElement('div');
         for(let key in arr[i]){
             const p = document.createElement('p');
-            p.textContent = `${key}: ${arr[i][key]}`;
+            p.textContent = `${key.replace(key.charAt(0), key.charAt(0).toUpperCase())}: ${arr[i][key]}`;
             div.appendChild(p);
         }
 
