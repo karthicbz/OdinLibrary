@@ -62,8 +62,25 @@ html, body{
 
 .card{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, max(200px));
+    grid-template-rows: 250px;
     gap: 20px;
+}
+
+.card>div{
+    padding: 1rem;
+    line-height: 1.5rem;
+    box-shadow: 1px 1px 5px 1px grey;
+    margin: 1rem;
+}
+
+.card>div>.delButton{
+    padding: 0.3rem;
+    margin-top: 8px;
+    border: none;
+    background: #f04c4c;
+    color: white;
+    border-radius: 3px;
 }
 
 form{

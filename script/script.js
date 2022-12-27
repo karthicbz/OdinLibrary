@@ -36,6 +36,7 @@ addBookToLibrary.prototype.createCard = function(arr){
         delButton.textContent='delete';
         div.appendChild(delButton);
 
+
         card.appendChild(div);
     }
 }
