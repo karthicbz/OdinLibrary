@@ -10,6 +10,10 @@ const cardContainer = document.querySelector('.card-container');
 const card = document.querySelector('.card');
 
 const errorMsg = document.querySelector('.err-msg');
+
+const errorBook = document.querySelector('.err-book');
+const errorAuthor = document.querySelector('.err-author');
+const errorPages = document.querySelector('.err-pages');
 // let del;
 
 
@@ -59,18 +63,36 @@ addBookToLibrary.prototype.clearInput = function(){
 }
 
 addButton.addEventListener('click', (e)=>{
-    if(bookName.value === '' || authorName.value === '' || bookPages.value === ''){
-        // errorMsg.classList.add('error');
-    }else{
-    card.innerHTML = '';
     e.preventDefault();
-    Book(bookName.value, authorName.value, bookPages.value, readStatus.value);
-    addBookToLibrary();
+    if(bookName.value === ''){
+        errorBook.classList.add('display-error');
+    }else{
+        errorBook.classList.remove('display-error');
+    }
 
-    addBookToLibrary.prototype.createCard(myLibrary);
-    addBookToLibrary.prototype.clearInput();
-    bookForm.classList.remove('display-form');
-    newBook.textContent = 'New Book';
+    if(authorName.value === ''){
+        errorAuthor.classList.add('display-error');
+    }else{
+        errorAuthor.classList.remove('display-error');
+    }
+
+    if(bookPages.value === ''){
+        errorPages.classList.add('display-error');
+    }else{
+        errorPages.classList.remove('display-error');
+    }
+
+    if((bookName.value !== '') && (authorName.value !== '') && (bookPages.value !== '')){
+        errorBook.classList.remove('display-error');
+        errorAuthor.classList.remove('display-error');
+        card.innerHTML = '';
+        Book(bookName.value, authorName.value, bookPages.value, readStatus.value);
+        addBookToLibrary();
+
+        addBookToLibrary.prototype.createCard(myLibrary);
+        addBookToLibrary.prototype.clearInput();
+        bookForm.classList.remove('display-form');
+        newBook.textContent = 'New Book';
     }
 });
 
@@ -90,7 +112,8 @@ card.addEventListener('click', (e)=>{
         myLibrary.splice(e.target.dataset.indexNumber, 1);
         card.innerHTML = '';
         addBookToLibrary.prototype.createCard(myLibrary);
-    }else if(e.target.textContent === 'Edit'){
+    }
+    else if(e.target.textContent === 'Edit'){
         // console.log(myLibrary[e.target.dataset.indexNumber]['read']);
         if(myLibrary[e.target.dataset.indexNumber]['read'] === 'Yes'){
             myLibrary[e.target.dataset.indexNumber]['read'] = 'No';

@@ -178,3 +178,16 @@ form>button:hover{
     border-radius: 3px;    
     color: white;
 } */
+
+.err-book, .err-author, .err-pages{
+    font-size: 1rem;
+    padding: 5px;
+    background-color: #fca5a5;
+    color: #7f1d1d;
+    border-radius: 3px;
+    display: none;
+}
+
+.display-error{
+    display: block;
+}
