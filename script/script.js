@@ -14,6 +14,8 @@ const errorMsg = document.querySelector('.err-msg');
 const errorBook = document.querySelector('.err-book');
 const errorAuthor = document.querySelector('.err-author');
 const errorPages = document.querySelector('.err-pages');
+
+// const errors = document.querySelector('.errors');
 // let del;
 
 
@@ -103,6 +105,11 @@ newBook.addEventListener('click', (e)=>{
         e.target.innerText = 'Cancel';
     }else{
         e.target.innerText = 'New Book';
+        // errors.classList.remove('display-error');
+        errorBook.classList.remove('display-error');
+        errorAuthor.classList.remove('display-error');
+        errorPages.classList.remove('display-error');
+        addBookToLibrary.prototype.clearInput();
     }
 });
 
