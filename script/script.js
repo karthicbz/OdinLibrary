@@ -134,3 +134,15 @@ card.addEventListener('click', (e)=>{
     }
 });
 
+bookName.addEventListener('keydown', ()=>{
+    errorBook.classList.remove('display-error');
+});
+
+authorName.addEventListener('keydown', ()=>{
+    errorAuthor.classList.remove('display-error');
+});
+
+bookPages.addEventListener('keydown', ()=>{
+    errorPages.classList.remove('display-error');
+});
+

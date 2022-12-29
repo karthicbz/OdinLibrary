@@ -33,9 +33,11 @@ html, body{
 }
 
 .header>.header-text{
-    color: white;
+    background: -webkit-linear-gradient(red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 2rem;
-    margin-left: 1rem;
+    margin-left: 5rem;
     font-weight: 700;
 }
 
@@ -51,6 +53,7 @@ html, body{
     margin-right: 1rem;
     /* box-shadow: 1px 1px 3px 1px #102b95; */
     transition: transform 0.5s;
+    font-size: 1rem;
 }
 
 .header>.newBook:hover{
@@ -68,20 +71,23 @@ html, body{
 
 .card{
     display: grid;
-    grid-template-columns: repeat(auto-fit, max(200px));
-    grid-template-rows: 250px;
+    grid-template-columns: repeat(auto-fit, max(250px));
+    grid-template-rows: 300px;
     gap: 20px;
     /* background-color: white; */
 }
 
 .card>div{
     padding: 1rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
     box-shadow: 1px 1px 5px 1px grey;
     margin: 1rem;
     border-radius: 5px;
     background-color: white;
     text-align: center;
+
+    font-size: 1.4rem;
+    color: gray;
 }
 
 .card>div>.del-button{
@@ -104,12 +110,16 @@ html, body{
 
 .card>div>.edit-button{
     padding: 0.3rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     border: none;
     background: #42b062;
     color: white;
     border-radius: 3px;
     transition: transform 0.5s;
+}
+
+.card>div>button{
+    font-size: 1.3rem;
 }
 
 .card>div>.edit-button:hover{
