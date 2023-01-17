@@ -19,49 +19,51 @@ const errorPages = document.querySelector('.err-pages');
 // let del;
 
 
-let myLibrary = [];
+class Book{
+    
+    static myLibrary = [];
 
-function Book(name, author, pages, read){
-    this.name = name;
-    this.author=author;
-    this.pages=pages;
-    this.read=read;
-
-}
-
-function addBookToLibrary(){
-    myLibrary.push(new Book(name, author, pages, read));
-}
-
-addBookToLibrary.prototype.createCard = function(arr){
-    for (let i=0; i<arr.length; i++){
-        const div = document.createElement('div');
-        for(let key in arr[i]){
-            const p = document.createElement('p');
-            p.textContent = `${arr[i][key]}`;
-            div.appendChild(p);
-        }
-
-        const editButton = document.createElement('button');
-        editButton.setAttribute('data-index-number', i);
-        editButton.classList.add('edit-button');
-        editButton.textContent = 'Edit';
-        div.appendChild(editButton);
-
-        const delButton = document.createElement('button');
-        delButton.setAttribute('data-index-number', i);
-        delButton.classList.add('del-button');
-        delButton.textContent='Delete';
-        div.appendChild(delButton);
-
-        card.appendChild(div);
+    constructor(name, author, pages, read){
+        this.name = name;
+        this.author=author;
+        this.pages=pages;
+        this.read=read;
     }
-}
 
-addBookToLibrary.prototype.clearInput = function(){
-    bookName.value = '';
-    authorName.value = '';
-    bookPages.value = '';
+    static addBookToLibrary(obj){
+        this.myLibrary.push(obj);
+    }
+
+    static createCard(arr){
+        for (let i=0; i<arr.length; i++){
+            const div = document.createElement('div');
+            for(let key in arr[i]){
+                const p = document.createElement('p');
+                p.textContent = `${arr[i][key]}`;
+                div.appendChild(p);
+            }
+
+            const editButton = document.createElement('button');
+            editButton.setAttribute('data-index-number', i);
+            editButton.classList.add('edit-button');
+            editButton.textContent = 'Edit';
+            div.appendChild(editButton);
+
+            const delButton = document.createElement('button');
+            delButton.setAttribute('data-index-number', i);
+            delButton.classList.add('del-button');
+            delButton.textContent='Delete';
+            div.appendChild(delButton);
+
+            card.appendChild(div);
+        }
+    }
+
+    static clearInput(){
+        bookName.value = '';
+        authorName.value = '';
+        bookPages.value = '';
+    }
 }
 
 addButton.addEventListener('click', (e)=>{
@@ -88,11 +90,11 @@ addButton.addEventListener('click', (e)=>{
         errorBook.classList.remove('display-error');
         errorAuthor.classList.remove('display-error');
         card.innerHTML = '';
-        Book(bookName.value, authorName.value, bookPages.value, readStatus.value);
-        addBookToLibrary();
+        // Book(bookName.value, authorName.value, bookPages.value, readStatus.value);
+        Book.addBookToLibrary(new Book(bookName.value, authorName.value, bookPages.value, readStatus.value));
 
-        addBookToLibrary.prototype.createCard(myLibrary);
-        addBookToLibrary.prototype.clearInput();
+        Book.createCard(Book.myLibrary);
+        Book.clearInput();
         bookForm.classList.remove('display-form');
         newBook.textContent = 'New Book';
     }
