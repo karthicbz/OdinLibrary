@@ -118,20 +118,20 @@ newBook.addEventListener('click', (e)=>{
 card.addEventListener('click', (e)=>{
     // console.log(e.target.textContent);
     if(e.target.textContent === 'Delete'){
-        myLibrary.splice(e.target.dataset.indexNumber, 1);
+        Book.myLibrary.splice(e.target.dataset.indexNumber, 1);
         card.innerHTML = '';
-        addBookToLibrary.prototype.createCard(myLibrary);
+        Book.createCard(Book.myLibrary);
     }
     else if(e.target.textContent === 'Edit'){
         // console.log(myLibrary[e.target.dataset.indexNumber]['read']);
-        if(myLibrary[e.target.dataset.indexNumber]['read'] === 'Yes'){
-            myLibrary[e.target.dataset.indexNumber]['read'] = 'No';
+        if(Book.myLibrary[e.target.dataset.indexNumber]['read'] === 'Yes'){
+            Book.myLibrary[e.target.dataset.indexNumber]['read'] = 'No';
             card.innerHTML = '';
-            addBookToLibrary.prototype.createCard(myLibrary);
+            Book.createCard(Book.myLibrary);
         }else{
-            myLibrary[e.target.dataset.indexNumber]['read'] = 'Yes';
+            Book.myLibrary[e.target.dataset.indexNumber]['read'] = 'Yes';
             card.innerHTML = '';
-            addBookToLibrary.prototype.createCard(myLibrary);
+            Book.createCard(Book.myLibrary);
         }
     }
 });
