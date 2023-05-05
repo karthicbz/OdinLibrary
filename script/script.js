@@ -116,9 +116,12 @@ newBook.addEventListener('click', (e)=>{
 card.addEventListener('click', (e)=>{
     // console.log(e.target.textContent);
     if(e.target.textContent === 'Delete'){
-        myLibrary.splice(e.target.dataset.indexNumber, 1);
-        card.innerHTML = '';
-        addBookToLibrary.prototype.createCard(myLibrary);
+        e.target.parentNode.classList.add('hide-card');
+        setTimeout(()=>{
+            myLibrary.splice(e.target.dataset.indexNumber, 1);
+            card.innerHTML = '';
+            addBookToLibrary.prototype.createCard(myLibrary);
+        }, 500);
     }
     else if(e.target.textContent === 'Edit'){
         // console.log(myLibrary[e.target.dataset.indexNumber]['read']);
